@@ -12,4 +12,15 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+ 
+}
+
+.partie-haute {
+  display: flex;
+  align-items: first baseline;
+}
+
+.partie-basse {    
+  display: flex;
+  align-items: first baseline;
 }

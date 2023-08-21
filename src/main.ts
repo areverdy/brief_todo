@@ -21,14 +21,12 @@ const partie_haute = document.createElement('div')
 partie_haute.classList.add("partie_haute")
 partie_haute.setAttribute('id', '1ereboite')
 
-const btnAjout = document.createElement('div')
-btnAjout.innerText = 'nom_de_la_tache'
-btnAjout.classList.add('class')
+const btnAjout = document.createElement('input')
+btnAjout.setAttribute("type","text")
 document.body.appendChild(btnAjout)
 
 const button = document.createElement('div')
 button.innerHTML = 'nouvelle_tache'
-button.classList.add('class')
 document.body.appendChild(button)
 
 partie_haute.appendChild(btnAjout)
@@ -38,6 +36,10 @@ app.appendChild(partie_haute)
 const partie_basse = document.createElement('div')
 partie_basse.classList.add("partie_basse")
 partie_basse.setAttribute('id', '2ndboite')
+
+const todo = document.createElement('div')
+todo.classList.add("recap_des_taches")
+todo.setAttribute('id','petiteboitds2ndboite')
 
 const list = document.createElement('div')
 list.innerHTML = 'liste_des_taches'
@@ -51,14 +53,22 @@ document.body.append(check)
 
 const buttonsup = document.createElement('div')
 buttonsup.innerHTML = 'supprimer_la_tache'
-list.classList.add('class')
+buttonsup.classList.add('class')
 document.body.append(buttonsup)
 
-partie_basse.appendChild(chek)
-partie_basse.appendChild(list)
-partie_basse.appendChild(buttonsup)
+todo.appendChild(check)
+todo.appendChild(list)
+todo.appendChild(buttonsup)
+partie_basse.appendChild(todo)
 app.appendChild(partie_basse)
 
+button.addEventListener("click",()=> {
+  afficher_nouvelle_tache()
+})
+
+function afficher_nouvelle_tache (){
+  
+}
 
 
 
