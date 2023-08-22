@@ -37,10 +37,14 @@ const partie_basse = document.createElement('div')
 partie_basse.classList.add("partie_basse")
 partie_basse.setAttribute('id', '2eboite')
 
-// const list = document.createElement('div')
-// list.innerText = 'liste_des_taches'
-// partie_basse.appendChild(list)
-// app.appendChild(partie_basse)
+const titrePartieBasse = document.createElement('h2')
+titrePartieBasse.innerText = "Liste des tâches"
+partie_basse.appendChild(titrePartieBasse)
+
+const list = document.createElement('div')
+list.classList.add('liste')
+partie_basse.appendChild(list)
+app.appendChild(partie_basse)
 
 button.addEventListener("click",()=> {
   afficher_nouvelle_tache()
