@@ -50,10 +50,10 @@ function afficher_nouvelle_tache (){
   console.log("input value", formulaire.value)
   
   const todo = document.createElement('div')
-  todo.classList.add("tache")
-
+  todo.classList.add('todo')
 
   const contenu =  document.createElement('div')
+  contenu.classList.add('contenu')
   contenu.innerText = formulaire.value
 
 
@@ -61,12 +61,14 @@ function afficher_nouvelle_tache (){
   check.setAttribute('type', "checkbox")
   check.addEventListener("change", () => {
     console.log('changed', check.checked)
-    if(check.checked){
-      contenu.style.color = "green"
-    }
-    else {
-      contenu.style.color = "red"
-    }
+    contenu.classList.toggle('check')
+    
+    // if(check.checked){
+    //   contenu.classList.add('check')
+    // }
+    // else {
+    //   contenu.classList.remove('check')
+    // }
   })
 
   const buttonsup = document.createElement('button')

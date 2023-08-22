@@ -8,12 +8,28 @@ body {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  border: 1px solid ;
+  justify-content: space-between;
+
  
 }
+
+.todo{
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  border: 1px solid;
+  justify-content: space-between;
+}
+
+.check {
+  color: green;
+  text-decoration: line-through;
+}
+
 
 .partie-haute {
   display: flex;
