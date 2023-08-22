@@ -10,6 +10,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  text-align: center;
+  color: black
+  }
 
 #app {
   display: flex;
@@ -31,7 +35,6 @@ h1 {
   text-decoration: line-through;
 }
 
-
 .partie-haute {
   display: flex;
   flex-direction: row;
@@ -42,5 +45,8 @@ h1 {
 
 .partie-basse {    
   display: flex;
-  align-items: first baseline;
+  flex-direction: row;
+  width: 500px;
+  border: 1px solid ;
+  justify-content: space-between;
 }
