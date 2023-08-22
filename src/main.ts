@@ -21,45 +21,25 @@ const partie_haute = document.createElement('div')
 partie_haute.classList.add("partie_haute")
 partie_haute.setAttribute('id', '1ereboite')
 
-const btnAjout = document.createElement('input')
-btnAjout.setAttribute("type","text")
-document.body.appendChild(btnAjout)
+const formulaire = document.createElement('input')
+formulaire.setAttribute("type","text")
+document.body.appendChild(formulaire)
 
-const button = document.createElement('div')
-button.innerHTML = 'nouvelle_tache'
+const button = document.createElement('button')
+button.innerText = 'nouvelle_tache'
 document.body.appendChild(button)
 
-partie_haute.appendChild(btnAjout)
+partie_haute.appendChild(formulaire)
 partie_haute.appendChild(button)
 app.appendChild(partie_haute)
 
 const partie_basse = document.createElement('div')
 partie_basse.classList.add("partie_basse")
-partie_basse.setAttribute('id', '2ndboite')
-
-const todo = document.createElement('div')
-todo.classList.add("recap_des_taches")
-todo.setAttribute('id','petiteboitds2ndboite')
 
 const list = document.createElement('div')
-list.innerHTML = 'liste_des_taches'
+list.innerText = 'liste_des_taches'
 list.classList.add('class')
-document.body.appendChild(list)
-
-const check = document.createElement('div')
-check.innerHTML = 'tache-validee'
-check.classList.add('class')
-document.body.append(check)
-
-const buttonsup = document.createElement('div')
-buttonsup.innerHTML = 'supprimer_la_tache'
-buttonsup.classList.add('class')
-document.body.append(buttonsup)
-
-todo.appendChild(check)
-todo.appendChild(list)
-todo.appendChild(buttonsup)
-partie_basse.appendChild(todo)
+partie_basse.appendChild(list)
 app.appendChild(partie_basse)
 
 button.addEventListener("click",()=> {
@@ -67,7 +47,45 @@ button.addEventListener("click",()=> {
 })
 
 function afficher_nouvelle_tache (){
+  console.log("input value", formulaire.value)
   
+  const todo = document.createElement('div')
+  todo.classList.add("tache")
+
+
+  const contenu =  document.createElement('div')
+  contenu.innerText = formulaire.value
+
+
+  const check = document.createElement('input')
+  check.setAttribute('type', "checkbox")
+  check.addEventListener("change", () => {
+    console.log('changed', check.checked)
+    if(check.checked){
+      contenu.style.color = "green"
+    }
+    else {
+      contenu.style.color = "red"
+    }
+  })
+
+  const buttonsup = document.createElement('button')
+  buttonsup.innerText = 'supprimer la tache'
+  buttonsup.addEventListener("click", () => {
+    console.log('rfrgsdgdf')
+    // Select the todo
+
+    // selectedTodo.remove()
+  })
+
+  todo.appendChild(check)
+  todo.appendChild(contenu)
+  todo.appendChild(buttonsup)
+
+  list.appendChild(todo)
+
+  formulaire.value = ""
+
 }
 
 
