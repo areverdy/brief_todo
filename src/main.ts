@@ -70,13 +70,19 @@ function afficher_nouvelle_tache (){
   })
 
   const buttonsup = document.createElement('button')
+  buttonsup.classList.add('buttonsup')
   buttonsup.innerText = 'supprimer la tache'
   buttonsup.addEventListener("click", () => {
-    console.log('rfrgsdgdf')
+    console.log('a effacer')
+    todo.remove()
+
+    // delete(buttonsup)
+
     // Select the todo
 
     // selectedTodo.remove()
   })
+
 
   todo.appendChild(check)
   todo.appendChild(contenu)
