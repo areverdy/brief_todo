@@ -1,20 +1,21 @@
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: bisque;
 }
+
+h1 {
+  text-align: center;
+  color: blue;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 
 #app {
   display: flex;
   flex-direction: row;
   width: 500px;
   border: 1px solid ;
-  justify-content: space-between;
-
- 
 }
 
 .todo{
@@ -33,7 +34,10 @@ body {
 
 .partie-haute {
   display: flex;
-  align-items: first baseline;
+  flex-direction: row;
+  width: 500px;
+  border: 1px solid ;
+  justify-content: space-between;
 }
 
 .partie-basse {    
