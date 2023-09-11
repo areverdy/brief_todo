@@ -60,7 +60,6 @@ function afficher_nouvelle_tache (){
   contenu.classList.add('contenu')
   contenu.innerText = formulaire.value
 
-
   const check = document.createElement('input')
   check.setAttribute('type', "checkbox")
   check.addEventListener("change", () => {
@@ -100,6 +99,18 @@ function afficher_nouvelle_tache (){
 
 }
 
+
+async function route() {
+  const res = await fetch("http://localhost:3031/hello")
+  const message = await res.text()
+  console.log(message)
+}
+
+async function affiche_liste_des_taches() {
+  const res = await fetch("http://localhost:3031/afflistetaches")
+  const message = await res.text()
+  console.log(message)
+}
 
 
 
