@@ -47,7 +47,8 @@ partie_basse.appendChild(list)
 app.appendChild(partie_basse)
 
 button.addEventListener("click",()=> {
-  afficher_nouvelle_tache()
+  APICall_Create_Task(formulaire.value);
+  afficher_nouvelle_tache()  
 })
 
 function afficher_nouvelle_tache (){
@@ -112,6 +113,20 @@ async function affiche_liste_des_taches() {
   console.log(message)
 }
 
+affiche_liste_des_taches()
 
 
+async function APICall_Create_Task(value: string) {
+  const res = await fetch("http://localhost:3031/add/"+value, {method : "POST"})
+  const message = await res.text()
+  console.log(message)
+}
 
+async function taches_existantes() {
+  const res = await fetch("http://localhost:3031/todos")
+  const message = await res.text()
+  console.log(message)
+  
+}
+
+taches_existantes()
